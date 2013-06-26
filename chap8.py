@@ -8,9 +8,9 @@ def move_letter(letter, move_by):
 	end_pos = start_pos + move_by
 	
 	if end_pos < 97:
-		end_pos = 123 - (97 - end_pos)
+		end_pos = 26 - end_pos
 	elif end_pos > 122:
-		end_pos = 97 + (end_pos - 123)
+		end_pos = end_pos - 26
 		
 	new_letter = chr(end_pos)
 	return new_letter
