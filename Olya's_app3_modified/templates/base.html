@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Dev Lab #03</title>
+		<link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<link rel="stylesheet" type="text/css" href="/static/style.css" />
+		<script type="text/javascript" src="/static/jquery-1.7.1.min.js"></script>
+	</head>
+	<body>
+		
+		<!--
+		< div id="nav">
+		-->
+		<div class="navbar">
+			<div class="navbar-inner">
+				<p class="brand">Olya's web app</p>
+				<ul class="nav">
+					
+					<li><a href="{{url_for('main')}}"><i class="icon-home"></i></a></li>
+					<li><a href="/about/">About</a></li>
+					<li><a href="/contact/">Contact</a></li>
+					<li><a href="/lviv/">My Home City</a></li>
+					
+					{% if 'username' in session %}
+					
+					<li><a href="{{url_for('remote')}}">Remote Control</a></li>
+					<li><a href="{{url_for('music')}}"><i class="icon-music"></i></a></li>
+					<li><a href="{{url_for('login')}}">Logout</a>
+					{% else %}
+					<li><a href="{{url_for('login')}}">Login</a>
+					{% endif %}
+				</ul>
+			</div>
+		</div>
+		<div id="content">
+			{% block body %}{% endblock %}
+		</div>
+		<div id="flashed">
+			{% with messages = get_flashed_messages() %}
+				{% for message in messages %}
+					{{message}}
+				{% endfor %}
+			{% endwith %}
+		</div>
+	</body>
+</html>

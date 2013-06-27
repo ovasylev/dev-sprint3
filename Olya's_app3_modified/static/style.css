@@ -1,0 +1,17 @@
+body{
+	font-family: 'Georgia', serif;
+	color:3E4349;
+}
+
+div#lviv {
+	font-size: large;
+}
+
+div#flushed {
+	margin-left: 10em;
+	font-size: large;
+}
+
+#content {
+    margin-left: 10em;
+}
